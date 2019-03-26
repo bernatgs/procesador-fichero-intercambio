@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT fichero (cabecera?, operacion?, totales?)>
+
+<!ELEMENT cabecera (campo+)>
+<!ATTLIST cabecera
+          opcional (true | false) "true"
+          repetible (true | false) "false">
+
+<!ELEMENT operacion (campo+)>
+<!ATTLIST operacion
+          opcional (true | false) "false"
+          repetible (true | false) "true">
+
+<!ELEMENT totales (campo+)>
+<!ATTLIST totales
+          opcional (true | false) "true"
+          repetible (true | false) "false">
+
+<!ELEMENT campo EMPTY>
+<!ATTLIST campo
+          nombre ID #REQUIRED
+          longitud NMTOKEN #REQUIRED
+          caracterRelleno CDATA " "
+          ubicacionRelleno (derecha | izquierda) "derecha"
+          tipoDato (alfanumérico | numérico | regexp | texto | decimal) "alfanumérico"
+          regexpFormato CDATA #IMPLIED>
+

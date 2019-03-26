@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="fichero_intercambio.dtd" elementFormDefault="qualified" targetNamespace="fichero_intercambio.dtd">
+  <xs:element name="fichero">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cabecera" minOccurs="0"/>
+        <xs:element ref="operacion" minOccurs="0"/>
+        <xs:element ref="totales" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cabecera">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="campo" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="opcional" type="xs:boolean" default="true"/>
+      <xs:attribute name="repetible" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="operacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="campo" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="opcional" type="xs:boolean" default="false"/>
+      <xs:attribute name="repetible" type="xs:boolean" default="true"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="totales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="campo" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="opcional" type="xs:boolean" default="true"/>
+      <xs:attribute name="repetible" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="campo">
+    <xs:complexType>
+      <xs:attribute name="nombre" type="xs:string" use="required"/>
+      <xs:attribute name="longitud" type="xs:string" use="required"/>
+      <xs:attribute name="caracterRelleno" type="xs:string" default=" "/>
+      <xs:attribute name="ubicacionRelleno" default="derecha">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="derecha"/>
+            <xs:enumeration value="izquierda"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="tipoDato" default="alfanumérico">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="alfanumérico"/>
+            <xs:enumeration value="numérico"/>
+            <xs:enumeration value="regexp"/>
+            <xs:enumeration value="texto"/>
+            <xs:enumeration value="decimal"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="regexpFormato" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

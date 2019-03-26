@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<!DOCTYPE fichero SYSTEM "C:\workspace\procesador-fichero-intercambio\src\main\resources\fichero_intercambio.dtd">-->
+<fichero xmlns="fichero_intercambio.dtd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="fichero_intercambio.dtd">
+    <operacion>
+        <campo nombre="BANCO" longitud="4" tipoDato="regexp" regexpFormato="0049"/>
+        <campo nombre="COMERCIO" longitud="9"/>
+        <campo nombre="TERMINAL" longitud="5" tipoDato="numérico"/>
+        <campo nombre="NUREMESA" longitud="5"/>
+        <campo nombre="NUOPERAC" longitud="7" tipoDato="regexp" regexpFormato="0+"/>
+        <campo nombre="NUOPECOM" longitud="7" tipoDato="numérico"/>
+        <campo nombre="NUMAUTO" longitud="6"/>
+        <campo nombre="FECHAOP" longitud="8" tipoDato="regexp" regexpFormato="\d{8}"/>
+        <campo nombre="HORAOP" longitud="6" tipoDato="regexp" regexpFormato="\d{6}"/>
+        <campo nombre="GRUPOLIQ" longitud="1" tipoDato="regexp" regexpFormato=" *"/>
+        <campo nombre="TARJETA" longitud="19" tipoDato="texto"/>
+        <campo nombre="CODIGOP" longitud="3" tipoDato="regexp" regexpFormato="051|052|053|054"/>
+        <campo nombre="ESTADO" longitud="3" tipoDato="regexp" regexpFormato="AUT"/>
+        <campo nombre="MONEDA" longitud="1" tipoDato="regexp" regexpFormato="1"/>
+        <campo nombre="IMPORTE" longitud="9" tipoDato="numérico"/>
+        <campo nombre="IMPOCON" longitud="9" tipoDato="numérico"/>
+        <campo nombre="SIGNOCON" longitud="1" tipoDato="regexp" regexpFormato=" *"/>
+        <campo nombre="IMPODES" longitud="9" tipoDato="numérico"/>
+        <campo nombre="SIGNODES" longitud="1"/>
+        <campo nombre="NOMTER" longitud="15" tipoDato="texto"/>
+    </operacion>
+    <totales>
+        <campo nombre="BANCO" longitud="4" tipoDato="regexp" regexpFormato="0049"/>
+        <campo nombre="COMERCIO" longitud="9"/>
+        <campo nombre="TERMINAL" longitud="5" tipoDato="numérico"/>
+        <campo nombre="NUREMESA" longitud="5"/>
+        <campo nombre="NUOPERAC" longitud="7" tipoDato="regexp" regexpFormato="0+"/>
+        <campo nombre="NUOPECOM" longitud="7" tipoDato="numérico"/>
+        <campo nombre="NUMAUTO" longitud="6" tipoDato="regexp" regexpFormato=" *"/>
+        <campo nombre="FECHAOP" longitud="8" tipoDato="regexp" regexpFormato="\d{8}"/>
+        <campo nombre="HORAOP" longitud="6" tipoDato="regexp" regexpFormato="\d{6}"/>
+        <campo nombre="GRUPOLIQ" longitud="1" tipoDato="regexp" regexpFormato=" *"/>
+        <campo nombre="TARJETA" longitud="19" tipoDato="regexp" regexpFormato="0+"/>
+        <campo nombre="CODIGOP" longitud="3" tipoDato="regexp" regexpFormato="080"/>
+        <campo nombre="ESTADO" longitud="3" tipoDato="regexp" regexpFormato="AUT"/>
+        <campo nombre="MONEDA" longitud="1" tipoDato="regexp" regexpFormato="1"/>
+        <campo nombre="IMPORTE" longitud="9" tipoDato="numérico"/>
+        <campo nombre="IMPOCON" longitud="9" tipoDato="numérico"/>
+        <campo nombre="SIGNOCON" longitud="1" tipoDato="regexp" regexpFormato=" *"/>
+        <campo nombre="IMPODES" longitud="9" tipoDato="numérico"/>
+        <campo nombre="SIGNODES" longitud="1"/>
+        <campo nombre="NOMTER" longitud="15" tipoDato="texto"/>
+    </totales>
+</fichero>
+
